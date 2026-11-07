@@ -1,5 +1,6 @@
 package cz.jakubaugustyn.predictivedeobfuscator.steps;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.github.javaparser.ast.CompilationUnit;
 import com.github.javaparser.ast.body.MethodDeclaration;
 import com.github.javaparser.ast.expr.MethodCallExpr;
@@ -83,6 +84,7 @@ public class RenameMethodStep extends Step {
         return className + "." + methodName + "(" + String.join(", ", arguments) + ")";
     }
 
+    @JsonIgnore
     public String getMethodSignature() {
         return getMethodSignature(className, oldName, signature);
     }

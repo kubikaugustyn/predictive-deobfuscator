@@ -165,5 +165,6 @@ public class StepService {
     public void redoAllSteps() throws IOException {
         dataFileService.copySourceJavaFiles();
         executeSteps(getAllSteps());
+        Log.info("All steps re-done");
     }
 }
